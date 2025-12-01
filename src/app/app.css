@@ -1,3 +1,7 @@
-.left-side p{
-    color: red;
+.left-side p {
+  color: red;
+}
+
+.active {
+  color: blue;
 }
