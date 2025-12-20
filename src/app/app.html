@@ -22,5 +22,10 @@
     <ng-template #loggedOut> Please Login </ng-template>
   </div>
 </main>
+<p>Price: {{ price | number: '2.2-2' | currency:'INR' }}</p>
+<p>{{ user | json }}</p>
+
+
+<p>Ascending order: {{ num | sortNumber: 'asc' }}</p>
 
 <router-outlet />
