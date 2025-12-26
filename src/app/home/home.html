@@ -1,0 +1,26 @@
+<p>Home works!</p>
+
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Hello, {{ title }}</h1>
+      <p>Congratulations! Your app is running.</p>
+      <img [src]="imageUrl" />
+
+      <h3>Counter : {{ count }}</h3>
+      <button (click)="increment()">plus +</button>
+      <button (click)="decrement()">minus -</button>
+
+      <input [(ngModel)]="username" />
+      <p>You typed: {{ username }}</p>
+    </div>
+
+    <div *ngIf="isLoggedIn; else loggedOut">Welcome User</div>
+
+    <div [ngClass]="active">ngClass Apply</div>
+
+    <div [ngStyle]="{ color: 'red', 'font-size': '18px' }">Multiple styles</div>
+
+    <ng-template #loggedOut> Please Login </ng-template>
+  </div>
+</main>
