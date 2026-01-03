@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { User } from '../services/user';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
@@ -22,6 +24,8 @@ export class Home {
 
   active: string = 'active';
 
+  constructor(private userservice: User) {}
+
   
   increment() {
     this.count++;
@@ -29,5 +33,11 @@ export class Home {
 
   decrement() {
     this.count--;
+  }
+
+  getUsers(){
+    this.userservice.getUsers().subscribe(data => {
+      console.log(data);
+    });
   }
 }

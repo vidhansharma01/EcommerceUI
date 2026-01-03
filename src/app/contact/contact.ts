@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SortNumberPipe } from '../sort-number-pipe';
 
 @Component({
   selector: 'app-contact',
