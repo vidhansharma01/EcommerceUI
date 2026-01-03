@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { PostService } from '../services/post.service';
 import { Post } from '../services/post.interface';
 
@@ -19,6 +19,6 @@ export class Contact {
   post$: Observable<Post[]>;
 
   constructor(private postService: PostService) {
-    this.post$ = this.postService.getPosts();
+    this.post$ = this.postService.getPosts().pipe(map(post => post.filter(p => p.id === 5)));
   }
 }
